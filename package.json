@@ -1,0 +1,70 @@
+{
+  "name": "biokit-builder",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI-powered application builder for production-ready Next.js apps",
+  "author": "Maximilian Lombardo",
+  "license": "MIT",
+  "homepage": "https://github.com/MaximilianLombardo/biokit-builder",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MaximilianLombardo/biokit-builder.git"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/@biokit/*"
+  ],
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "start": "turbo start",
+    "lint": "turbo lint",
+    "test": "turbo test",
+    "test:unit": "turbo test:unit",
+    "test:integration": "turbo test:integration",
+    "test:e2e": "playwright test",
+    "type-check": "turbo type-check",
+    "clean": "turbo clean && rm -rf node_modules",
+    "setup": "node scripts/setup/init.js",
+    "setup:env": "node scripts/setup/env.js",
+    "setup:db": "node scripts/setup/supabase.js",
+    "deploy": "node scripts/deploy/vercel.js",
+    "analyze": "node scripts/analyze/codebase.js",
+    "generate": "node scripts/generate/template.js",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@typescript-eslint/eslint-plugin": "^6.19.0",
+    "@typescript-eslint/parser": "^6.19.0",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "^14.1.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
+    "prettier": "^3.2.4",
+    "turbo": "^1.11.3",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "zod": "^3.22.4"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,yml,yaml}": [
+      "prettier --write"
+    ]
+  }
+}

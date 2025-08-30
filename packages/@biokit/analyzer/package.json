@@ -1,0 +1,27 @@
+{
+  "name": "@biokit/analyzer",
+  "version": "0.1.0",
+  "description": "Repository analysis engine for biokit-builder",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "simple-git": "^3.20.0",
+    "globby": "^14.0.0",
+    "gray-matter": "^4.0.3",
+    "fs-extra": "^11.2.0",
+    "lodash": "^4.17.21",
+    "parse-github-url": "^1.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/fs-extra": "^11.0.4",
+    "@types/lodash": "^4.14.202",
+    "typescript": "^5.3.3",
+    "vitest": "^1.2.0"
+  }
+}

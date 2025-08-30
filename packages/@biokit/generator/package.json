@@ -1,0 +1,26 @@
+{
+  "name": "@biokit/generator",
+  "version": "0.1.0",
+  "description": "Code generation engine for biokit-builder using Claude Code",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@biokit/analyzer": "workspace:*",
+    "fs-extra": "^11.2.0",
+    "execa": "^8.0.1",
+    "chalk": "^5.3.0",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/fs-extra": "^11.0.4",
+    "@types/lodash": "^4.14.202",
+    "typescript": "^5.3.3",
+    "vitest": "^1.2.0"
+  }
+}
